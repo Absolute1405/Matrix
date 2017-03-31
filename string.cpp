@@ -270,13 +270,3 @@ mstring::~mstring() {
   msize=0;
 }
 
-
-//FUNCTION
-mstring& func(mstring& lhs, mstring& rhs, mstring& result, int *err) {
-
-  lhs.allign(result, rhs, err);
-  if (*err != 1 ){
-    result.m_sort();
-  }
-  return result;
-}
