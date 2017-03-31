@@ -3,25 +3,16 @@
 #include "string.hpp"
 #include <stdio.h>
 
+mstring& func(mstring& lhs, mstring& rhs, mstring& result, int *err) {
+
+  lhs.allign(result, rhs, err);
+  if (*err != 1 ){
+    result.m_sort();
+  }
+  return result;
+}
+
 int main (){
-  int err=0;
-  
-  mstring mas(2);
-  mas.set_arr(&err);
-  if (err == 1) return 1;
-  std::cout << "Sorted" << std::endl;
-  mas.m_sort();
-  mas.show_arr();
-
-
   return 0;
 }
-/* ПЛАН
-1)Оператор сложения строк ?
-2)Конструкторы массива строк
-3)Гетеры и сетеры для массива (для строки массива и всего массива)
-4)Метод слияния массивов
-5)Метод слияния массивов с исключением повтора
-6)Метод лексографического упорядочивания
-7)В мейне создать массив массивов строк
-8)В мейне функцию, которая производит слияние массивов и лексографически их упорядочивает */
+
